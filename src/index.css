@@ -9,7 +9,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+ul {
+  padding-left: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
