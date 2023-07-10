@@ -38,13 +38,20 @@ const CardPoster = styled.img`
 `;
 
 const CardItem = styled.li`
-  flex-basis: calc((100% - 45px) / 4);
+  flex-basis: 100%;
   &:hover ${CardContent} {
     opacity: 1;
     transform: translateY(0);
   }
   &:hover ${CardPoster} {
     filter: blur(5px) brightness(50%);
+  }
+
+  @media (min-width: 768px) {
+    flex-basis: calc((100% - 30px) / 3);
+  }
+  @media (min-width: 1024px) {
+    flex-basis: calc((100% - 45px) / 4);
   }
 `;
 
