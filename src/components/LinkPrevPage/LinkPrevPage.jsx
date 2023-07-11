@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export const LinkPrevPage = ({ location }) => {
   const backLinkLocationRef = useRef(location);
-  const backLinkHref = backLinkLocationRef.current.state?.form || '/movies';
+  const backLinkHref = backLinkLocationRef.current.state?.form ?? '/';
   return <Link to={backLinkHref}>Back to prev page</Link>;
 };
 
