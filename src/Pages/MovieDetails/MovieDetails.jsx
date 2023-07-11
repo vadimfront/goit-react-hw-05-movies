@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Container } from 'components/Container/Container';
 import { ErrorMessage } from 'components/ErrorMessage/ErrorMessage';
 import { Spinner } from 'components/Spinner/Spinner';
@@ -12,7 +12,6 @@ const MovieDetails = () => {
   const { movieId } = useParams();
   const { loading, data, error } = useFetch(`/movie/${movieId}`);
   const location = useLocation();
-  const backLinkLocationRef = useRef(location);
 
   const { title, poster_path, overview, genres } = data;
   return (
@@ -24,9 +23,7 @@ const MovieDetails = () => {
           errorMessage={'We are already working to fix this'}
         />
       )}
-      {!isEmptyObject(location) && (
-        <LinkPrevPage location={backLinkLocationRef.current} />
-      )}
+      {!isEmptyObject(location) && <LinkPrevPage location={location} />}
       {!isEmptyObject(data) && (
         <div className="movie_details">
           <img src={`https://image.tmdb.org/t/p/w300/${poster_path}`} alt="" />
